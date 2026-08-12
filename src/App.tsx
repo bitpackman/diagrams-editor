@@ -113,6 +113,7 @@ function EditorInner() {
   const [tool, setTool] = useState<CanvasTool>('select');
   const [dialog, setDialog] = useState<'import' | 'export' | null>(null);
   const [hist, setHist] = useState({ canUndo: false, canRedo: false });
+  const [connecting, setConnecting] = useState(false);
 
   const { screenToFlowPosition, fitView, deleteElements, getNodes } = useReactFlow<
     AppNode,
@@ -517,7 +518,7 @@ function EditorInner() {
       <div className="main">
         <Sidebar onAddNode={addNodeFromKind} onLoadTemplate={loadTemplate} />
         <div
-          className="canvas-wrap"
+          className={`canvas-wrap${connecting ? ' connecting' : ''}`}
           onDrop={onDrop}
           onDragOver={onDragOver}
           onDoubleClick={onCanvasDoubleClick}
@@ -529,6 +530,8 @@ function EditorInner() {
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             onConnect={onConnect}
+            onConnectStart={() => setConnecting(true)}
+            onConnectEnd={() => setConnecting(false)}
             onBeforeDelete={onBeforeDelete}
             onNodeDragStart={takeSnapshot}
             onSelectionDragStart={takeSnapshot}

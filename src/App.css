@@ -788,7 +788,7 @@
 
 .sn:hover .react-flow__handle,
 .sn.selected .react-flow__handle,
-.sn .react-flow__handle.connectionindicator {
+.canvas-wrap.connecting .sn .react-flow__handle {
   opacity: 1;
 }
 

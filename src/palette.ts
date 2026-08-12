@@ -35,7 +35,7 @@ export const PALETTE: PaletteKind[] = [
   { key: 'table', category: 'data', label: 'テーブル', shape: 'rect', icon: 'table', color: 'blue', title: 'テーブル' },
   { key: 'document', category: 'data', label: 'ドキュメント', shape: 'rect', icon: 'document', color: 'gray', title: 'ドキュメント' },
   { key: 'api', category: 'integration', label: 'API', shape: 'rounded', icon: 'cloud', color: 'blue', title: 'API呼び出し' },
-  { key: 'agent', category: 'integration', label: 'AIエージェント', shape: 'rounded', icon: 'bot', color: 'purple', title: 'AIエージェント' },
+  { key: 'agent', category: 'integration', label: 'エージェント', shape: 'rounded', icon: 'bot', color: 'purple', title: 'AIエージェント' },
   { key: 'webhook', category: 'integration', label: 'Webhook', shape: 'rounded', icon: 'webhook', color: 'pink', title: 'Webhook' },
 ];
 
